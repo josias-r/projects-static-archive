@@ -1,0 +1,93 @@
+.page-template-contact {
+	header {
+		nav {
+			> ul > li {
+				&:after {
+					background: $main-clr;
+				}
+			}
+		}
+	}
+}
+main > section.container-contact {
+	background: $sec-clr;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	> div {
+		opacity: 0;
+		margin-top: 4em;
+		text-transform: uppercase;
+		color: $main-clr;
+		padding: 3em;
+		position: relative;
+		background: $bright;
+		width: 100%;
+		max-width: 800px;
+		transition: padding .4s ease;
+		&.flyOut {
+			animation: flyOut 2s ease-in-out;
+		}
+	}
+}
+
+@keyframes flyOut {
+	0% {
+	}
+	25% {
+		opacity: 1;
+	}
+	50% {
+		transform: scaleX(1.5) translateX(-100vw);
+		opacity: 0;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		transform: scaleX(1) translateX(0);
+	}
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+	main > section.container-contact {
+		> div {
+			form {
+				.flex-group {
+					flex-wrap: wrap;
+					> div {
+						margin-top: 1em;
+					}
+				}
+				.send {
+					position: relative;
+					bottom: 0;
+					left: auto;
+					margin: auto;
+					margin-top: 2em;
+					padding: .5em 1em;
+					padding-top: .8em;
+					border: 2px solid $main-clr;
+					&:hover {
+						background: $main-clr;
+						color: $bright;
+						transform: scaleX(1.1);
+					}
+					> div.burger {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 480px) {
+	main > section.container-contact {
+		> div {
+			padding: 2em 1em;
+		}
+	}
+}

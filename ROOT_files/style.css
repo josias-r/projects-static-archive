@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?v0khrb');
+  src:  url('fonts/icomoon.eot?v0khrb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?v0khrb') format('truetype'),
+    url('fonts/icomoon.woff?v0khrb') format('woff'),
+    url('fonts/icomoon.svg?v0khrb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_postcss:before {
+  content: "\e922";
+}
+.icon_gift:before {
+  content: "\e931";
+}
+.icon_compilers:before {
+  content: "\e932";
+}
+.icon_tag:before {
+  content: "\e930";
+}
+.icon_trash:before {
+  content: "\e92c";
+}
+.icon_download:before {
+  content: "\e92d";
+}
+.icon_search:before {
+  content: "\e91c";
+}
+.icon_package:before {
+  content: "\e92a";
+}
+.icon_terminal:before {
+  content: "\e914";
+}
+.icon_bundle:before {
+  content: "\e927";
+}
+.icon_copy:before {
+  content: "\e929";
+}
+.icon_compress:before {
+  content: "\e926";
+}
+.icon_autoprefixer:before {
+  content: "\e925";
+}
+.icon_babel:before {
+  content: "\e924";
+}
+.icon_heart:before {
+  content: "\e921";
+}
+.icon_tick:before {
+  content: "\e920";
+}
+.icon_diff-errored:before {
+  content: "\e91f";
+}
+.icon_diff-unmodified:before {
+  content: "\e91e";
+}
+.icon_warning:before {
+  content: "\e917";
+}
+.icon_info:before {
+  content: "\e916";
+}
+.icon_menu:before {
+  content: "\e915";
+}
+.icon_install-certificates:before {
+  content: "\e913";
+}
+.icon_network-preview:before {
+  content: "\e911";
+}
+.icon_external-link:before {
+  content: "\e912";
+}
+.icon_chevron:before {
+  content: "\e90f";
+}
+.icon_live-preview:before {
+  content: "\e90d";
+}
+.icon_cloud:before {
+  content: "\e907";
+}
+.icon_globe:before {
+  content: "\e909";
+}
+.icon_server:before {
+  content: "\e90b";
+}
+.icon_settings:before {
+  content: "\e90a";
+}
+.icon_folder:before {
+  content: "\e906";
+}
+.icon_check-checked:before {
+  content: "\e904";
+}
+.icon_check-unchecked:before {
+  content: "\e905";
+}
+.icon_restore:before {
+  content: "\e900";
+}
+.icon_minimize:before {
+  content: "\e901";
+}
+.icon_maximize:before {
+  content: "\e902";
+}
+.icon_close:before {
+  content: "\e903";
+}
+.icon_coffee:before {
+  content: "\e90c";
+}
+.icon_css:before {
+  content: "\e910";
+}
+.icon_ejs:before {
+  content: "\e91b";
+}
+.icon_haml:before {
+  content: "\e928";
+}
+.icon_js:before {
+  content: "\e92e";
+}
+.icon_json:before {
+  content: "\e92f";
+}
+.icon_less:before {
+  content: "\e90e";
+}
+.icon_pug:before {
+  content: "\e93a";
+}
+.icon_scss:before {
+  content: "\e941";
+}
+.icon_slim:before {
+  content: "\e947";
+}
+.icon_stylus:before {
+  content: "\e948";
+}
+.icon_typescript:before {
+  content: "\e94d";
+}
+.icon_plus:before {
+  content: "\e145";
+}
+.icon_arrow:before {
+  content: "\e5c8";
+}
+.icon_inspect:before {
+  content: "\e86f";
+}
+.icon_file:before {
+  content: "\e24d";
+}
+.icon_triangle:before {
+  content: "\e037";
+}
+.icon_minus:before {
+  content: "\e15b";
+}
+.icon_eye:before {
+  content: "\e8f4";
+}
+.icon_eye-off:before {
+  content: "\e8f5";
+}
+.icon_spinner:before {
+  content: "\e982";
+}
+.icon_chrome:before {
+  content: "\ead9";
+}
+.icon_firefox:before {
+  content: "\eada";
+}
+.icon_ie:before {
+  content: "\eadb";
+}
+.icon_edge:before {
+  content: "\eadc";
+}
+.icon_safari:before {
+  content: "\eadd";
+}
+.icon_quill:before {
+  content: "\e908";
+}
+.icon_markdown:before {
+  content: "\ea36";
+}
+.icon_diff-removed:before {
+  content: "\e919";
+}
+.icon_diff-modified:before {
+  content: "\e91a";
+}
+.icon_diff-ignored:before {
+  content: "\e91d";
+}
+.icon_diff-added:before {
+  content: "\e918";
+}
+.icon_radio-checked:before {
+  content: "\ea54";
+}
+.icon_radio-unchecked:before {
+  content: "\ea56";
+}
+.icon_html:before {
+  content: "\ea80";
+}
+.icon_image:before {
+  content: "\e92b";
+}

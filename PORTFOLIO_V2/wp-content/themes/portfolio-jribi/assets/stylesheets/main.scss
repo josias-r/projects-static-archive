@@ -1,0 +1,346 @@
+@import "modules/_variables";
+
+@import "partials/noise";
+@import "partials/normalize.min";
+@import "partials/typo";
+
+@import "pages/404";
+@import "pages/home";
+@import "pages/about";
+@import "pages/work";
+@import "pages/work-detail";
+@import "pages/contact";
+
+::selection {
+  background: yellow;
+}
+* {
+	padding: 0;
+	margin: 0;
+	cursor: none !important;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+body {
+	font-family: 'Josefin Sans', 'sans-serif';
+	font-weight: 700;
+}
+a {
+  color: $main-clr;
+}
+.honigtopf {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+.bischduenmensch {
+  width: 30px;
+  height: 30px;
+  border: 5px solid $main-clr;
+  border-radius: 30px;
+  background: $sec-clr;
+  transition: background .4s ease;
+  &.ja {
+    background: $main-clr;
+  }
+}
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .alert {
+    font-weight: 400;
+    margin: 0 .5em;
+    margin-top: 1em;
+    color: white;
+    background: $main-clr;
+    padding: .8em 1em;
+    text-transform: none;
+    display: none;
+    &.active {
+      display: block;
+    }
+    &.error {
+      background: $sec-clr;
+    }
+  }
+  .flex-group:last-of-type {
+    margin-bottom: 0em;
+  }
+  .flex-group {
+    display: flex;
+    margin-bottom: 3em;
+    > div {
+      margin: 0 .5em;
+      width: 100%;
+      input,textarea {
+        transition: all .4s ease;
+        padding: 1em;
+        background: $light-grey;
+        width: 100%;
+        display: block;
+        border: none;
+        border-bottom: 3px solid rgba(black,.2);
+        &:focus {
+          background: rgba(0,0,0,.1);
+          border-bottom: 3px solid $main-clr;
+        }
+      }
+      input {
+
+      }
+      textarea {
+        resize: none;
+        height: 20em;
+      }
+    }
+  }
+  .send {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    margin-left: 60px;
+    transition: all .4s ease;
+    .ajax-loader {
+      display: none;
+    }
+    input {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $main-clr;
+      background: none;
+      border: none;
+    }
+    div.burger:before,div.burger,div.burger:after {
+      position: relative;
+      content: '';
+      display: block;
+      transition: width .2s ease;
+      display: block;
+      height: 8px;
+      background: $main-clr;
+    }
+    div.burger {
+      transition: width .2s ease;
+      margin: 14px 0;
+      height: 8px;
+    }
+    div.burger:before{
+      width: 20px;
+      position: absolute;
+      bottom: 100%;
+      margin-bottom: 5px;
+    }
+    div.burger{
+      transition-delay: .1s;
+      width: 30px;
+    }
+    div.burger:after{
+      transition-delay: .2s;
+      width: 40px;
+      position: absolute;
+      top: 100%;
+      margin-top: 5px;
+    }
+    &:hover {
+      transform: rotate(-3deg);
+      div.burger:before{
+        width: 30px;
+      }
+      div.burger{
+        width: 40px;
+      }
+      div.burger:after{
+        width: 50px;
+      }
+    }
+  }
+}
+
+
+.cursor {
+	transform: translate(-100%, -100%);
+	transition: width, height, margin;
+	transition-duration: .4s;
+	transition-timing-function: ease;
+	text-rendering: optimizeLegibility;
+	pointer-events: none;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 1000px;
+	border: 2px solid black;
+	background: $bright;
+	mix-blend-mode: exclusion;
+	margin: -10px 0 0 -10px;
+	&.hidden {
+		display: none;
+	}
+	&.hover {
+		width: 40px;
+		height: 40px;
+		margin: -20px 0 0 -20px;
+	}
+	&.touch {
+		display: none;
+	}
+}
+header {
+	position: fixed;
+	z-index: 50;
+	width: 100%;
+	top: 0;
+	padding: 2em;
+	pointer-events: none;
+	transition: all .4s ease;
+	nav > ul {
+		list-style: none;
+		text-transform: uppercase;
+		transition: transform .4s ease, color .4s ease;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+		font-weight: 700;
+		&.popInText {
+			animation: popInText .4s ease;
+		}
+		> li {
+			pointer-events: all;
+			position: relative;
+			margin-right: 2em;
+			margin-bottom: 1em;
+			&:after {
+				transition: all .4s ease;
+				display: block;
+				position: absolute;
+				content: '';
+				background: $sec-clr;
+				width: 0;
+				left: 50%;
+				height: 4px;
+				bottom: -3px;
+			}
+			&:hover{
+				&:after {
+					left: 0;
+					width: 100%;
+				}
+			}
+			ul {
+				list-style: none;
+				opacity: .5;
+				position: absolute;
+				top: 2em;
+				left: 0;
+				li {
+					margin-bottom: .5em;
+				}
+			}
+		}
+		> li.active, li.current-menu-item{
+			animation: hopText .2s;
+			&:after {
+				animation: getActive .4s ease;
+				animation-fill-mode: both;
+			}
+		}
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+}
+main {
+	position: relative;
+	height: 100%;
+	overflow-y: scroll;
+	> section {
+		position: relative;
+		min-height: 100vh;
+	}
+}
+footer {
+	.browser-warning {
+		opacity: .8;
+		z-index: 99;
+		display: none;
+		pointer-events: none;
+		background: $sec-clr;
+		padding: 1em;
+		color: $bright;
+		font-weight: 300;
+		position: fixed;
+		bottom: 20px;
+		border-radius: 5px;
+		box-shadow: 0 .3em .8em rgba($dark, .8);
+		left: 50%;
+		transform: translateX(-50%);
+		&.active {
+			display: block;
+		}
+	}
+	.copyright {
+		font-weight: 300;
+		font-size: .8em;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		padding: 1em;
+		padding-right: 2em;
+		pointer-events: none;
+		text-align: right;
+		z-index: 50;
+		> img {
+			height: 1em;
+		}
+		.logo-w {
+			display: none;
+		}
+	}
+	.filters {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+
+
+
+@keyframes hopText {
+	0% {
+		transform: translateY(0);
+		animation-timing-function: ease-in;
+	}
+	50% {
+		transform: translateY(-.5em);
+		animation-timing-function: ease-out;
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes getActive {
+	to {
+		left: 0;
+		width: 100%;
+	}
+}
+
+@keyframes popInText {
+	from {
+		transform: scaleY(0);
+	}
+}

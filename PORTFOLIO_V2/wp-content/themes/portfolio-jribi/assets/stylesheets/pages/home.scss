@@ -1,0 +1,102 @@
+.home {
+	header {
+		top: 50%;
+		padding-left: 5em;
+		margin-top: -2.8em;
+		nav {
+			 color: $bright;
+			 li {
+				 text-shadow: none;
+				 &:after {
+					 box-shadow: none;
+				 }
+			 }
+		 }
+	}
+}
+main > section.container-home {
+	background: $main-clr;
+	.logo {
+		position: absolute;
+		height: 100%;
+		max-width: 100%;
+		right: 0;
+		padding: 5% 15%;
+		filter:url(#offset);
+	}
+	.line {
+		top: 50%;
+		position: absolute;
+		height: 4px;
+		background: $bright;
+		animation-name: lineIn;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+	.name {
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+		color: $bright;
+		right: 20%;
+		width: auto;
+		font-size: 4rem;
+		> h2 {
+			font-size: 1em;
+			margin-bottom: 0;
+			display: block;
+			text-transform: uppercase;
+			position: relative;
+			> span {
+				opacity: 0;
+				display: inline-block;
+			}
+		}
+		> h2:nth-child(even) {
+			line-height: .5em;
+			margin-left: 2.85em;
+			margin-top: -.1em;
+		}
+	}
+	.bar {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 0;
+		background: $bright;
+		.triangle {
+			height: inherit;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			transform: translateY(-100%);
+			fill: $bright;
+		}
+	}
+}
+
+
+@keyframes lineIn {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.home  {
+		header {
+			margin-top: 0;
+			top: 0;
+			padding-left: 2em;
+		}
+	}
+}
+@media only screen and (max-width: 480px) {
+	.home  {
+		main > section .name {
+			font-size: 13.3vw;
+		}
+	}
+}

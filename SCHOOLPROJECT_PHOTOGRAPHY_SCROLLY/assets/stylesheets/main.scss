@@ -1,0 +1,126 @@
+$main-clr: rgb(157, 73, 73);
+$sec-clr: rgb(81, 175, 73);
+$disp-font: 'Merriweather', serif;
+$bdy-font: 'Yantramanav', sans-serif;
+
+$main-clr: #292929;
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+img, video {
+  width: 100%;
+  max-height: 100%;
+  padding: .2em;
+}
+.preloader {
+  .loading {
+    font-size: 2em;
+    padding-bottom: 1em;
+  }
+  font-family: $bdy-font;
+  font-weight: 100;
+  img {
+    display: inline;
+    height: 4em;
+    width: 6em;
+  }
+  .align {
+    max-width: 90%;
+    width: 50em;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .flex {
+    align-items: flex-start;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .click2 {
+    transform: scaleX(-1);
+  }
+  .left  {
+    transform: rotate(180deg);
+  }
+  .up {
+    transform: rotate(270deg);
+  }
+  .down {
+    transform: rotate(90deg);
+  }
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  pointer-events: none;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  text-align: center;
+}
+.container {
+  display: flex;
+  .align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  > div {
+    flex-basis: 0;
+    height: 100vh;
+    overflow: hidden;
+    > section {
+      overflow: hidden;
+      height: 100vh;
+      p {
+        color: white;
+        font-weight: 200;
+        font-family: $bdy-font;
+      }
+    }
+  }
+  .topic {
+    flex-grow: .8;
+    background: $main-clr;
+    > section {
+      overflow: hidden;
+      h1, p {
+        color: white;
+        text-align: center;
+        font-family: $disp-font;
+        width:60%;
+        margin:0 auto;
+        word-wrap: break-word;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: .5em;
+      }
+      p {
+        font-family: $bdy-font;
+        font-weight: 100;
+      }
+    }
+  }
+  .content {
+    background: darken($main-clr, 5);
+    flex-grow: 2.5;
+    > section {
+      padding: 5%;
+    }
+    .align {
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+.page-template-work {
+	header {
+		nav {
+		}
+	}
+}
+main > section.container-work {
+	background: $bright;
+	> .posts {
+		padding: 6em 3em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin: auto;
+		max-width: 1600px;
+		.to-detail {
+			transform: none;
+			position: fixed;
+			z-index: 1;
+			background: $dark;
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		> div:not(.to-detail) {
+			opacity: 0;
+			margin: 3em 2em;
+			position: relative;
+			width: 20em;
+			height: 25em;
+			box-shadow: 0 .2em .4em rgba(0,0,0,.5);
+			transition: box-shadow .4s ease;
+			background: $dark;
+			transform-style: preserve-3d;
+			&:hover {
+				box-shadow: 0 .5em 1em rgba(0,0,0,.5);
+				.overflow {
+					.carpet {
+						transform: translateY(0) scaleY(1);
+						.triangle {
+							height: 1em;
+						}
+					}
+				}
+				.counter {
+					text-shadow: 0 .3em .6em rgba(0, 0, 0, .2);
+					transform: rotate(3deg) translateX(50%) translateZ(50px);
+					bottom: 0;
+					right: .2em;
+				}
+			}
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.overflow {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+				.carpet {
+					transform-style: preserve-3d;
+					transform: translateY(-50%) scaleY(0);
+					text-align: center;
+					padding: 0 1em;
+					font-size: 2.8em;
+					color: $bright;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					background: rgba($sec-clr, .5);
+					transition: transform .4s ease;
+					word-wrap: break-word;
+					hyphens: auto;
+					.date {
+						transform: translateZ(10px);
+						padding: .5em 0;
+						padding-top: 1em;
+						font-size: .6em;
+						color: $main-clr;
+						font-family: 'Architects Daughter', cursive;
+					}
+					.title {
+						padding-bottom: .5em;
+						transform: translateZ(40px)
+					}
+					.triangle {
+						transition: height .4s ease;
+						fill: rgba($sec-clr, .5);
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						height: 0;
+						transform-origin: bottom;
+						transform: rotate(180deg) scaleX(-1);
+					}
+				}
+			}
+			.counter {
+				text-shadow: 0 .1em .1em rgba(0, 0, 0, .2);
+				transition: .4s ease;
+				position: absolute;
+				color: $main-clr;
+				font-size: 7em;
+				bottom: 50%;
+				right: 50%;
+				transform: translate(50%, 50%);
+			}
+			a {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	> .pagination {
+		text-align: center;
+		padding-bottom: 6rem;
+		a, span.current {
+			text-decoration: none;
+			color: white;
+			padding: .8em 1em;
+			background: $main-clr;
+			box-shadow: 0 .2em .4em rgba(0,0,0,.2);
+			&.prev {
+				margin-right: 1em;
+			}
+			&.next {
+				margin-left: 1em;
+			}
+		}
+		span.current {
+			opacity: .5;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	main > section.container-work {
+		> .posts {
+			padding: 6em 1em;
+			> div:not(.to-detail) {
+				margin: 1em .5em;
+				width: 100%;
+				height: 0;
+				padding-bottom: 120%;
+				box-shadow: none;
+				&:hover {
+					box-shadow: none;
+					transform: none;
+				}
+				.counter {
+					text-shadow: 0 .1em .1em rgba(0, 0, 0, .2);
+					transition: transform .4s ease, text-shadow .4s ease;
+					position: absolute;
+					color: $main-clr;
+					font-size: 7em;
+					bottom: 0;
+					transform: translate(0, 0);
+					right: .2em;
+				}
+				.overflow {
+					.carpet {
+						transform: translateY(0);
+						.triangle {
+							height: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
