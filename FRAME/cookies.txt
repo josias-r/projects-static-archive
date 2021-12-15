@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+frame.archive.josias.me	TRUE	/	FALSE	1999999999	fe_typo_user	eb04d9fb6d167b5a79c6d78cddc4f7b1
+
